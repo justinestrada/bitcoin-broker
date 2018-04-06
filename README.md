@@ -1,2 +1,2 @@
-# bitcoin-broker
-krbecrypto.com
+# Bitcoin Broker-WP-Theme
+Bitcoin Broker WP Theme

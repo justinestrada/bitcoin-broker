@@ -1,0 +1,1349 @@
+/*
+Theme Name: Bitcoin Broker
+Theme URI: https://mydigitalsauce.com
+Author: MyDigitalSauce
+Author URI: https://mydigitalsauce.com
+Description: Bitcoin Broker is a one of a kind WordPress theme for booking Bitcoin investors as a Bitcoin Broker.
+Version: 1.1.5
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: bitcoin_broker
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Bitcoin Broker is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
+*/
+
+/* general > elements */
+body, p, ul li, a {
+    font-size: 16px;
+}
+a {
+    text-decoration: none;
+}
+blockquote {
+    border-left: 5px solid #f7931a;
+    background: #ececec;
+}
+input {
+    min-height: 40px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.xs-text-center {
+    text-align: center;
+}
+.float-right {
+    float: right;
+}
+.rotate-up180 {
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    transition: 500ms;
+}
+/* general > break points > elements */
+@media (min-width: 768px){
+    .sm-float-right {
+        float: right;
+    }
+}
+/* elements > bootstrap */
+.modal-backdrop {
+    background: #fff;
+}
+#watch-live .modal-header {
+    border-bottom: none;
+}
+#watch-live .modal-dialog {
+    margin-top: 50px;
+}
+#watch-live .modal-body {
+    padding: 0;
+}
+.modal-footer {
+    padding: 15px;
+    text-align: left;
+    border-top: none;
+}
+@media (min-width: 768px) {
+    .modal-dialog {
+        width: 600px;
+        margin: 150px auto;
+    }
+}
+@media (min-width: 992px){
+    .md-container {
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    .md-container {
+        width: 970px;
+    }
+    .modal-dialog {
+        width: 100%;
+        max-width: 900px;
+    }
+}
+@media (min-width: 1200px) {
+    .lg-container {
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    .md-container,
+    .lg-container {
+        width: 1170px;
+    }
+}
+/* elements > colors */
+.star-clr {
+    color: #f7931a;
+}
+/* elements > header-row */
+.header-row {
+    padding: 15px 0;
+}
+.header-row .header-site-logo-anchor {
+    font-size: 20px;
+    font-weight: bold;
+    color: #444;
+}
+.header-row .header-site-logo-icon {
+    display: inline-block;
+    width: 100%;
+    max-width: 180px;
+}
+.page-template-template-home .header-row .header-site-logo-anchor {
+    color: #444;
+}
+.header-row .header-menu-ul {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+.header-row .header-menu-row .menu-item {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+    /*width: 25%;*/
+    text-align: right;
+}
+.header-row .header-menu-row .menu-item a {
+    display: block;
+    padding: 6px 0;
+    font-size: 16px;
+    color: #444;
+}
+.header-row .header-dropdown-btn {
+        margin: 17px 0;
+}
+.header-row .header-dropdown-btn .icon-bar {
+    background: #444;
+    width: 50px;
+    height: 5px;
+    border-radius: 5px;
+}
+.header-row .navbar-toggle .icon-bar+.icon-bar {
+    margin-top: 10px;
+}
+/* elements > header-dropdown */
+.header-dropdown-menu-panel-group .panel-title {
+    padding: 15px 5px;
+}
+.header-dropdown-menu-panel-group:last-child {
+    margin-bottom: 0;
+}
+/* elements > section-feat-img */
+.section-feat-img {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    padding: 64px 0 50px;
+}
+/*.section-feat-img::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}*/
+/* elements > section-feat-carousel */
+#feat-carousel {
+    position: relative;
+}
+#feat-carousel .carousel-control {
+    background-image: none !important;
+}
+#feat-carousel .shadow-wrap::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#feat-carousel .carousel-inner img {
+    width: 100%;
+}
+.carousel-caption-btns {
+    display: none;
+}
+.carousel-caption-btns a.first-btn,
+.carousel-caption-btns a.second-btn {
+    background: #444;
+    color: #fff;
+    border-radius: 50px;
+    padding: 15px;
+    margin-right: 50px;
+    font-size: 24px;
+}
+.carousel-caption-btns a.first-btn {
+    background: #444;
+}
+.carousel-caption-btns a.second-btn {
+    background: #f7931a;
+}
+.section-feat-img .feat-img-text {
+    padding: 0 0 25px 0;
+    color: #fff;
+}
+.section-feat-img .feat-img-desc {
+    padding: 25px 0 0 0;
+    color: #fff;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.section-feat-img .feat-img-arrow-down {
+    padding-top: 25px;
+    margin-bottom: 0;
+    text-align: center;
+    color: #fff;
+}
+.explore-actions-row {
+    margin-top: 50px;
+}
+.explore-action {
+    display: block;
+  width: 100%;
+  height: 225px;
+  margin: 15px auto;
+  border-radius: 5px;
+}
+.explore-action:first-child {
+  margin-top: 0;
+}
+.explore-action:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    -webkit-transition: all 0.2s ease 0s;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+}
+.explore-action.explore-action-learn {
+  background-image: url('https://krbecrypto.com/wp-content/themes/bitcoin-broker/img/carousel/gentlemen-of-crypto-slide.jpg');
+  background-size: cover;
+}
+.explore-action.explore-action-learn:before {
+    background-color: rgba(255, 85, 0, 0.75);
+}
+.explore-action.explore-action-join {
+  background-image: url('https://krbecrypto.com/wp-content/uploads/2018/02/benefit-5.jpg');
+  background-size: cover;
+}
+.explore-action.explore-action-join:before {
+    background-color: rgba(48, 161, 196, 0.75);
+}
+.explore-action.explore-action-buy {
+  background-image: url('https://krbecrypto.com/wp-content/themes/bitcoin-broker/img/action-explore/buy_450x450.jpg');
+  background-size: cover;
+}
+.explore-action.explore-action-buy:before {
+    background-color: rgba(5, 166, 77, 0.75);
+}
+.explore-action .explore-action-inner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.explore-action .explore-action-wrapper {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+.explore-action .explore-action-content {
+    display: table-cell;
+    padding: 2em;
+    vertical-align: middle;
+    text-align: center;
+}
+.explore-action .explore-action-title {
+    color: #fff;
+}
+.explore-action .explore-action-desc {
+  display: block;
+  color: #fff;
+}
+/* elements > section-page */
+.section-page {
+    margin-top: 50px;
+}
+/* elements > section-about */
+.section-about {
+    padding: 75px 0;
+}
+/* elements > section-seperator */
+.section-why-bitcoin {
+    padding: 75px 0;
+}
+.section-why-bitcoin .explore-action-scarcity {
+  background-image: url('https://krbecrypto.com/wp-content/themes/bitcoin-broker/img/why-bitcoin/scarcity_450x450.jpg');
+  background-size: cover;
+}
+.section-why-bitcoin .explore-action::before {
+    background-color: rgba(247, 147, 26, 0.75);
+}
+.section-why-bitcoin .explore-action-open-source {
+  background-image: url('https://krbecrypto.com/wp-content/themes/bitcoin-broker/img/why-bitcoin/open-source_450x450.jpg');
+  background-size: cover;
+}
+.section-why-bitcoin .explore-action-global-payments {
+  background-image: url('https://krbecrypto.com/wp-content/themes/bitcoin-broker/img/why-bitcoin/global-payments_450x450.jpg');
+  background-size: cover;
+}
+.section-why-bitcoin .explore-action-store-of-value {
+  background-image: url('https://krbecrypto.com/wp-content/themes/bitcoin-broker/img/why-bitcoin/store-of-value_450x450.jpg');
+  background-size: cover;
+}
+/* elements > section-seperator */
+.section-seperator {
+    position: relative;
+    /*background-image: url('https://krbecrypto.com/wp-content/themes/bitcoin-broker/img/bg/classy-suit-bg_1200x300.jpg');*/
+    background-image: url('https://krbecrypto.com/wp-content/themes/bitcoin-broker/img/handshake.jpg');
+    background-position: center;
+    background-size: cover;
+    padding: 75px 0;
+}
+.section-seperator .seperator-title,
+.section-seperator .seperator-desc {
+    color: #fff;
+}
+.section-seperator .seperator-desc a {
+    color: #fff;
+}
+.section-seperator .seperator-desc a:hover,
+.section-seperator .seperator-desc a:focus {
+    color: #f7931a;
+}
+/* elements > section-watch-us-live */
+.section-watch-us-live {
+    position: relative;
+    /*background-image: url('https://krbecrypto.com/wp-content/themes/bitcoin-broker/img/bg/classy-suit-bg_1200x300.jpg');*/
+    background-image: url('https://krbecrypto.com/wp-content/themes/bitcoin-broker/img/bg/bitcoin-workers-darker.jpg');
+    background-position: center;
+    background-size: cover;
+    padding: 75px 0;
+}
+.section-watch-us-live .seperator-title,
+.section-watch-us-live .seperator-desc {
+    color: #fff;
+}
+.section-watch-us-live .seperator-desc a {
+    color: #fff;
+}
+.section-watch-us-live .seperator-desc a:hover,
+.section-watch-us-live .seperator-desc a:focus {
+    color: #f7931a;
+}
+/* elements > section-products */
+.products-wrapper {
+    margin-top: 50px;
+}
+.section-product {
+    padding: 25px 0;
+}
+.section-product:nth-child(odd) {
+    background: #fff;
+}
+.section-product .product-img {
+    display: block;
+    width: 100%;
+}
+.section-product .product-desc-col {
+    padding-top: 15px;
+}
+.section-product .product-category,
+.section-product .product-category a {
+    color: #f7931a;
+}
+.section-product .product-btn {
+    border-radius: 0;
+    padding: 15px;
+    color: #fff;
+    display: inline-block;
+    margin: 10px 15px 10px 0;
+}
+.section-product .product-btn.view-more-btn {
+    background: #444;
+}
+.section-product .product-btn.buy-btn {
+    background: #f7931a;
+}
+.section-product .edd_download_purchase_form {
+    display: inline-block;
+}
+.section-product .edd_download_purchase_form .edd-submit {
+    font-size: 16px;
+    border-radius: 0;
+    padding: 15px;
+    color: #fff;
+    margin: 10px 15px 10px 0;
+    background: #f7931a !important;
+    border: none;
+}
+/* elements > section-email-sub */
+.section-email-sub {
+    margin-top: 75px;
+}
+.section-email-sub .email-sub-form-wrapper {
+    margin-top: 25px;
+}
+.section-email-sub .form-group {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+.section-email-sub .form-group input[type="email"] {
+    border: none;
+    border-bottom: 2px solid #c7c7c7;
+    box-shadow: none;
+    min-height: 40px;
+    font-size: 16px;
+}
+.section-email-sub .form-group .subscribe-arrow-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: transparent;
+    border: none;
+    height: 40px;
+    color: #f7931a;
+}
+/* elements > section-support-form */
+.section-support-tabs {
+    margin-top: -43px;
+}
+.support-tabs-wrapper .nav-tabs>li>a {
+    background: #fff;
+    color: #444;
+    border-bottom: 1px solid #c7c7c7;
+}
+.support-tabs-wrapper .nav-tabs>li.active>a,
+.support-tabs-wrapper .nav-tabs>li.active>a:focus,
+.support-tabs-wrapper  .nav-tabs>li.active>a:hover {
+    font-weight: bold;
+    border-bottom: 1px solid transparent;
+}
+.support-tabs-wrapper .tab-content {
+    margin-top: 15px;
+}
+.support-form-inner-wrapper .form-control,
+.ninja-form-wrapper .ninja-forms-field {
+    min-height: 40px;
+    font-size: 16px;
+}
+.ninja-form-wrapper .ninja-forms-field {
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border-radius: 0;
+    border: 1px solid #ccc;
+}
+.support-form-inner-wrapper .support-form-btn input[type="submit"],
+.ninja-form-wrapper input[type="button"] {
+    display: inline-block;
+    float: right;
+    font-size: 16px;
+    color: #fff;
+    background: #444;
+    padding: 15px;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    padding: 15px;
+    text-transform: uppercase;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+    background: linear-gradient(50deg, #f7931a, #ff0000);
+}
+/* elements > section-single */
+.section-single {
+    margin-top: 25px;
+}
+/* elements > section-archive-navigation */
+.section-archive-navigation .search-col {
+    margin-top: 15px;
+}
+.section-archive-navigation .search-form-inner-col {
+    position: relative;
+}
+.section-archive-navigation .search-form-inner-col .input-search {
+    min-height: 40px;
+    font-size: 16px;
+    width: 100%;
+}
+.section-archive-navigation .search-form-inner-col .btn-search {
+    position: absolute;
+    right: 15px;
+    top: 0;
+    min-height: 40px;
+    background: transparent;
+    border-radius: 0;
+    font-size: 16px;
+    color: #444;
+    width: 40px;
+    border: none;
+}
+.section-archive-navigation .post-count {
+    margin: 15px 0 0;
+    color: #fff;
+}
+/* elements > blog-page */
+.blog-page-container {
+  margin-top: 50px;
+}
+/* elements > pagination */
+.pagination-navigation li a,
+.pagination-navigation li a:hover,
+.pagination-navigation li.active a,
+.pagination-navigation li.disabled {
+  color: #fff;
+  text-decoration:none;
+}
+.pagination-navigation li {
+  display: inline;
+}
+.pagination-navigation li a,
+.pagination-navigation li a:hover,
+.pagination-navigation li.active a,
+.pagination-navigation li.disabled {
+  border-radius: 0;
+  cursor: pointer;
+  padding: 5px 15px;
+}
+.pagination-navigation li a,
+.pagination-navigation li a:hover,
+.pagination-navigation li.active a,
+.pagination-navigation li.disabled {
+    background-color: #444;
+}
+.pagination-navigation li a:hover,
+.pagination-navigation li.active a {
+    background-color: #f7931a;
+}
+.section-post {
+    margin-bottom: 25px;
+}
+.section-post .entry-meta .entry-categories {
+    display: block;
+}
+.section-post .entry-categories a {
+    color: #f7931a;
+}
+.single-post .entry-categories,
+.single-post .entry-tags {
+    display: block;
+}
+.single-post .entry-categories a,
+.single-post .entry-tags a {
+    color: #f7931a;
+}
+.section-post .continue-reading-btn,
+.section-post .continue-reading-btn:hover,
+.section-post .continue-reading-btn:focus {
+    display: block;
+    margin: 15px 0;
+    background: #f7931a;
+    padding: 15px 5px;
+    border-radius: 0;
+    text-align: center;
+    color: #fff;
+    max-width: 200px;
+    font-size: 16px;
+}
+.section-post .entry-title-link,
+.section-post .entry-title-link:hover,
+.section-post .entry-title-link:focus {
+  color: #444;
+}
+.section-single-post {
+    margin-top: 25px;
+}
+.section-single-post .single-post-feat-img {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #c7c7c7;
+}
+.section-single-post .single-post-feat-img-wrapper {
+    background: #ececec;
+    padding: 15px;
+    border-radius: 0;
+    border: 1px solid #c7c7c7;
+}
+.section-single-post .single-post-content-wrapper,
+.section-single-post .single-post-comments-wrapper {
+    margin-top: 25px;
+}
+.single-post-content-wrapper .post-content {
+    padding-bottom: 25px;
+    border-bottom: 3px solid #ddd;
+    margin-top: 25px;
+}
+.single-post-author-box-row {
+    padding: 25px 0;
+    border-bottom: 3px solid #ddd;
+}
+.single-post-author-box-row .author-box-avatar {
+    display: block;
+    width: 100%;
+    max-width: 125px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+.single-post-author-box-row .author-box-title {
+    margin-top: 0;
+}
+.single-post .single-post-footer-post-meta {
+    margin-top: 25px;
+}
+/* elements > footer-wrapper */
+.footer-wrapper {
+    background: #444;
+    padding: 25px 0;
+    margin-top: 75px;
+}
+.footer-wrapper .footer-company-name-row {
+    margin-top: 15px;
+    color: #fff;
+}
+.footer-company-activity-col,
+#footer-second-row {
+    margin-top: 50px;
+}
+.footer-wrapper .footer-menu-ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-wrapper .footer-menu-row {
+    margin-top: 50px;
+}
+.footer-wrapper .footer-menu-row .menu-item {
+    width: 100%;
+}
+.footer-wrapper .footer-menu-row .menu-item:first-child {
+    padding-left: 0;
+}
+.footer-wrapper .footer-menu-row .menu-item {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+    /*width: 25%;*/
+    text-align: center;
+}
+.footer-wrapper .footer-menu-row .menu-item a {
+    color: #fff;
+}
+.footer-wrapper .footer-social-wrapper {
+    padding: 0;
+    font-size: 16px;
+    margin-top: 15px;
+}
+.footer-wrapper .footer-social-wrapper a,
+.footer-wrapper .footer-social-wrapper a:hover,
+.footer-wrapper .footer-social-wrapper a:focus {
+    color: #fff;
+}
+.footer-wrapper .footer-social-wrapper a {
+    margin: 0 15px;
+}
+.footer-logo {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+}
+.footer-logo-text {
+    font-size: 22px;
+    color: #fff;
+    font-weight: bold;
+}
+.footer-menu-column-ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.footer-menu-column-ul .menu-item {
+    margin-bottom: 5px;
+}
+.footer-menu-column-ul .menu-item:last-child {
+    margin-bottom: 0;
+}
+.footer-menu-column-ul .menu-item a {
+    color: #fff;
+}
+.footer-menu-column-ul .menu-item a:hover,
+.footer-menu-column-ul .menu-item a:focus {
+    color: #f7931a;
+}
+/* elements > plugins > easy-digital-downloads */
+.edd_form input {
+    min-height: 40px;
+    font-size: 16px;
+    border-radius: 0;
+    border: 1px solid #c7c7c7;
+}
+#edd_register_form .edd-input,
+#edd_login_form .edd-input {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    box-shadow: none;
+    border: 1px solid #dddddd;
+}
+#edd_register_form input[type=submit],
+input[type=submit].edd-submit {
+    display: block;
+    background: #444;
+    color: #fff;
+    border-radius: 0;
+    border: 1px solid #444;
+    width: 100%;
+    max-width: 100px;
+}
+input[type=submit].edd-submit:hover,
+input[type=submit].edd-submit:focus {
+    background: #f7931a;
+    color: #fff;
+    border-color: #f7931a;
+}
+.section-page-navigation,
+.section-archive-navigation,
+.section-single-navigation {
+    background: #444;
+    padding: 50px 0;
+}
+.page-wrapper .section-page-navigation,
+.archive-download-wrapper .section-archive-navigation,
+.single-download-wrapper .section-single-navigation {
+    padding-bottom: 100px;
+}
+.breadcrumb-wrapper .breadcrumbs {
+    margin: 0;
+    padding: 0;
+}
+.breadcrumb-wrapper .breadcrumbs li {
+    display: inline;
+}
+.breadcrumb-wrapper .breadcrumbs li,
+.breadcrumb-wrapper .breadcrumbs a,
+.breadcrumb-title {
+    color: #fff;
+}
+.breadcrumb-title {
+    margin: 0;
+}
+.single-download-tabs-wrapper .nav-tabs {
+    border: none;
+}
+.single-download-tabs-wrapper .nav-tabs>li>a {
+    background: #fff;
+    color: #444;
+    border-bottom: 1px solid #c7c7c7;
+}
+.single-download-tabs-wrapper .nav-tabs>li.active>a,
+.single-download-tabs-wrapper .nav-tabs>li.active>a:focus,
+.single-download-tabs-wrapper .nav-tabs>li.active>a:hover {
+    font-weight: bold;
+    border-bottom: none;
+}
+.single-download-tabs-wrapper .tab-content {
+    padding-top: 25px;
+}
+.section-single-download .download-details-left-col {
+    margin-top: -43px;
+}
+.download-details-left-col .download-preview-wrapper {
+    background: #ececec;
+    padding: 15px;
+    border-radius: 0;
+    border: 1px solid #c7c7c7;
+}
+.download-details-left-col .download-content-wrapper {
+    margin-top: 25px;
+}
+.item-actions-row {
+    margin-top: 15px;
+}
+.item-actions-row .demo-btn {
+    display: block;
+    text-align: center;
+    color: #fff;
+    background: #444;
+    padding: 5px;
+    border-radius: 0;
+    width: 100%;
+    max-width: 100px;
+    margin: 0 auto 5px;
+}
+.item-actions-row .social-shares {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+.item-actions-row .social-shares li {
+    display: block;
+    float: left;
+    padding: 5px;
+    background: #444;
+    color: #fff;
+    margin: 0;
+    width: 16.66%;
+    border-left: 1px solid #fff;
+}
+.item-actions-row .social-shares li:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-left: none;
+    width: 33.22%;
+}
+.item-actions-row .social-shares li:hover,
+.item-actions-row .social-shares li:focus {
+    background: #f7931a;
+}
+.item-actions-row .social-shares li:first-child {
+    background: #444;
+}
+.item-actions-row .social-shares li:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.item-actions-row .social-shares li a {
+    display: block;
+    width: 100%;
+    color: #fff;
+}
+.section-single-download .download-img {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #c7c7c7;
+}
+.download-purchase-details-wrapper,
+.download-author-details-wrapper,
+.download-sales-details-wrapper,
+.download-comments-details-wrapper,
+.download-meta-attr-details-wrapper {
+    background: #ececec;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #c7c7c7;
+    border-radius: 0;
+}
+.download-sales-details-wrapper {
+    font-size: 24px;
+}
+.download-comments-details-wrapper {
+    font-size: 24px;
+}
+.download-purchase-details-wrapper .rating-price-h2 .rating {
+    display: inline-block;
+    font-size: 16px;
+    vertical-align: middle;
+}
+.download-purchase-details-wrapper .rating-price-h2 .price {
+    display: inline-block;
+}
+.download-purchase-details-wrapper form {
+    margin-bottom: 0 !important;
+}
+.download-purchase-details-wrapper .edd-submit {
+    display: block;
+    text-align: center;
+    border-radius: 0;
+    padding: 15px;
+    color: #fff !important;
+    margin: 5px 0 0;
+    background: #f7931a !important;
+    border: none !important;
+    box-shadow: 0px 4px 0px 0px #906829;
+    width: 100%;
+    font-weight: bold;
+    font-size: 16px;
+}
+.download-purchase-details-wrapper .edd-cart-added-alert {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 15px 0 0;
+}
+.download-author-details-wrapper .avatar-img {
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+}
+.download-author-details-wrapper .author-row {
+    margin-bottom: 15px;
+}
+.download-author-details-wrapper .author-display-name {
+    word-wrap: break-word;
+}
+.download-details-right-col {
+    margin-top: 25px;
+}
+.download-details-right-col .download-details-btn {
+    display: inline-block;
+    text-align: center;
+    border-radius: 0;
+    padding: 15px;
+    color: #fff;
+    margin: 0;
+}
+.download-details-right-col .download-details-btn.view-portfolio-btn {
+    background: #444;
+}
+.download-meta-attr-details-wrapper td {
+    padding-bottom: 15px;
+}
+.download-meta-attr-details-wrapper td:first-child {
+    vertical-align: top;
+    font-weight: bold;
+    width: 140px;
+}
+/* elements > plugins > easy-digital-downloads > free-downloads extension */
+.jBox-Modal .jBox-content {
+    padding: 30px;
+}
+#edd-free-downloads-modal input[type='text'], #edd-free-downloads-modal input[type='password'] {
+    min-height: 40px;
+    font-size: 16px;
+    border-radius: 0;
+    padding: 0 5px;
+    border: 1px solid #ccc;
+    color: #444;
+}
+#edd-free-downloads-modal .edd-free-download-submit {
+    background: #f7931a;
+    border-color: #f7931a;
+    font-size: 16px;
+    border-radius: 0;
+    padding: 15px;
+    color: #fff;
+}
+/* elements > comments */
+#comments .comment-list {
+    padding: 0;
+}
+#comments .comment-list li {
+    list-style: none;
+    margin-bottom: 15px;
+}
+#comments .comment-list li .comment-body {
+    background: #ececec;
+    padding: 15px;
+    border: 1px solid #c7c7c7;
+    border-radius: 0;
+}
+#comments .comment-list .children li {
+    margin-top: 15px;
+}
+#comments .comment-list .children li .comment-body {
+    border-left: 5px solid #f7931a;
+}
+#comments .comment-list li .comment-body .avatar {
+    border-radius: 5px;
+}
+#comments .comment-list li .fn {
+    font-size: 16px;
+    padding-left: 15px;
+}
+#comments .comment-list li .says {
+    display: none;
+}
+#comments .comment-list li .reply .comment-reply-link {
+    background: #f7931a;
+    color: #fff;
+    border-radius: 0;
+    padding: 5px;
+    display: block;
+    text-align: center;
+    max-width: 50px;
+}
+#comments .comment-list li .comment-metadata,
+#comments .comment-list li .comment-content,
+#comments .comment-list li .reply  {
+    padding-left: 50px;
+}
+#comments textarea {
+    display: block;
+    width: 100%;
+    border-radius: 0;
+    border: 1px solid #c7c7c7;
+    font-size: 16px;
+    color: #333;
+    padding: 5px;
+}
+#comments input {
+    display: block;
+    width: 100%;
+    border-radius: 0;
+    border: 1px solid #c7c7c7;
+    font-size: 16px;
+    color: #333;
+    padding: 0 5px;
+    min-height: 40px;
+}
+#comments input[type="submit"] {
+    min-height: 40px;
+    max-width: 200px;
+    background: #fff;
+}
+#comments input[type="submit"]:hover,
+#comments input[type="submit"]:focus {
+    background: #f7931a;
+    color: #fff;
+}
+/* elements > plugins > contact-form-7 */
+.wpcf7-response-output {
+    border-radius: 0;
+    min-height: 40px;
+    font-size: 16px;
+    padding: 7px 0px !important;
+    display: block;
+    margin: 0 !important;
+    text-align: center;
+}
+/* jquery typed plugin > animations */
+.typed-cursor{
+    opacity: 1;
+    font-weight: 100;
+    -webkit-animation: cursor_blink 0.7s infinite;
+    -moz-animation: cursor_blink 0.7s infinite;
+    -ms-animation: cursor_blink 0.7s infinite;
+    -o-animation: cursor_blink 0.7s infinite;
+    animation: cursor_blink 0.7s infinite;
+}
+@-keyframes cursor_blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes cursor_blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes cursor_blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-ms-keyframes cursor_blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-o-keyframes cursor_blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+.typed-fade-out{
+    opacity: 0;
+    animation: 0;
+    transition: opacity .25s;
+}
+@media (min-width: 768px){
+    .sm-text-left {
+        text-align: left;
+    }
+    .sm-text-right {
+        text-align: right;
+    }
+    /* elements > header-row */
+    .header-row {
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+    }
+    .page-template-template-home .header-row {
+        position: fixed;
+        background: #fff;
+    }
+    .header-row .header-site-logo-anchor {
+        font-size: 24px;
+        color: #fff;
+    }
+    .header-row .header-site-logo-icon {
+    }
+    .page-template-template-home .header-row .header-site-logo-anchor {
+        color: #444;
+    }
+    .header-row .header-menu-ul {
+        margin: 23px 0;
+    }
+    .header-row .header-menu-row .menu-item a {
+        color: #fff;
+        font-weight: bold;
+    }
+    .page-template-template-home .header-row .header-menu-row .menu-item a {
+        color: #444;
+    }
+    .header-row .header-dropdown-btn .icon-bar {
+        background: #fff;
+    }
+    /* body */
+    .page-template-template-home .home-wrapper {
+        margin-top: 120px;
+    }
+    /* elements > section-feat-img */
+    .section-feat-img .feat-img-text {
+        padding: 50px 0 25px 0;
+    }
+    .section-product .product-img-col {
+        margin-top: 50px;
+    }
+    /* elements > section-feat-carousel */
+    .carousel-caption-btns {
+        position: absolute;
+        display: block;
+        right: 15%;
+        bottom: 20px;
+        left: 15%;
+        z-index: 10;
+        padding-top: 20px;
+        padding-bottom: 10%;
+        text-align: center;
+    }
+    /* elements > section-archive-navigation */
+    .section-page-navigation,
+    .section-archive-navigation,
+    .section-single-navigation {
+        background-image: url('https://krbecrypto.com/wp-content/uploads/2017/09/bitcoin-workers.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    .section-archive-navigation,
+    .section-page-navigation {
+        padding: 100px 0;
+    }
+    .section-single-navigation {
+        padding: 125px 0 100px;
+    }
+    .section-archive-navigation .search-col {
+        margin-top: 0;
+    }
+    .section-archive-navigation .search-form-inner-col .input-search {
+        float: right;
+    }
+    .section-archive-navigation .post-count {
+        text-align: right;
+    }
+    /* elements > section-post */
+    .section-post .entry-category {
+        display: block;
+    }
+    /* elements > plugins > easy-digital-downloads */
+    .item-actions-row .demo-btn {
+        margin: 0 auto;
+    }
+    /* elements > footer */
+    .footer-company-activity-col {
+        margin-top: 0px;
+    }
+    .footer-wrapper .footer-social-wrapper {
+        margin-top: 0;
+    }
+    .footer-wrapper .footer-menu-row .menu-item {
+        width: initial;
+        text-align: right;
+    }
+    .footer-logo {
+        float: right;
+        margin: 0;
+    }
+}
+@media (min-width: 992px){
+    .section-product .product-img-col {
+        margin-top: 75px;
+    }
+    /* elements > section-archive-navigation */
+    .section-page-navigation,
+    .section-archive-navigation,
+    .section-single-navigation {
+        background-image: url('https://krbecrypto.com/wp-content/uploads/2017/09/bitcoin-workers.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    /* elements > explore-action */
+    .explore-action {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+    }
+    .explore-action:first-child {
+      margin: 0 auto;
+    }
+    .explore-action .explore-action-desc {
+    display: none;
+    }
+    .explore-action:hover .explore-action-desc,
+    .explore-action:focus .explore-action-desc {
+    display: block;
+    }
+    /* elements section-why-bitcoin > explore-action */
+    .section-why-bitcoin .explore-action {
+        width: 100%;
+        height: 225px;
+        margin: 15px auto;
+    }
+}
+@media (min-width: 1200px){
+    /* elements > section-archive-navigation */
+    .section-page-navigation,
+    .section-archive-navigation,
+    .section-single-navigation {
+        background-image: url('https://krbecrypto.com/wp-content/uploads/2017/09/bitcoin-workers.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    .section-product .product-img-col {
+        margin-top: 30px;
+    }
+}
+
+
+
+.social-media-buttons-widget-content a {
+    display: inline-block;
+    float: left;
+    width: 25%;
+    text-align: center;
+    background: #f7931a;
+    color: #fff;
+    padding: 5px 15px;
+    border-right: 2px solid #fff;
+}
+.social-media-buttons-widget-content a:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.social-media-buttons-widget-content a:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.email-sub-form-wrapper .es_shortcode_form label {
+    display: block;
+    width: 100%;
+    text-align: left;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.email-sub-form-wrapper .es_shortcode_form input {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+form input[type="text"],
+form input[type="email"] {
+    display: block;
+    border: 1px solid #c7c7c7;
+    border-radius: 0;
+    min-height: 40px;
+    font-size: 16px;
+    padding: 5px 0 0 15px;
+}
+form textarea {
+    border-radius: 0;
+    border: 1px solid #c7c7c7;
+    padding: 5px 0 0 15px;
+    font-size: 16px;
+}
+form input[type="button"],
+form input[type="submit"] {
+    width: 100%;
+    max-width: 100px;
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+    background: linear-gradient(50deg, #f7931a, #ff0000);
+    color: #fff;
+}
+.nf-form-cont input {
+    border: 1px solid #c7c7c7;
+    padding-left: 15px;
+}
+.nf-form-cont textarea {
+    border: 1px solid #c7c7c7;
+    border-radius: 5px;
+    padding: 15px;
+}
+.nf-form-cont .ninja-forms-field[type="button"] {
+    color: #fff;
+    padding: 5px 15px;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 5px;
+        background: linear-gradient(60deg, #f7931a, #ff0000);
+}
+
+/*
+* Plugins
+*/
+
+/*
+* Plugins > RCP
+*/
+form#rcp_login_form {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+}
+form#rcp_login_form input[type="password"],
+form#rcp_login_form input[type="text"] {
+    width: 100%;
+    border: 1px solid #c7c7c7;
+    border-radius: 0;
+}

@@ -1,0 +1,21 @@
+/**
+ * @version beta
+ *
+ * pesto_store font styling.
+ *
+ * @package pesto_store
+ */
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Open Sans', sans-serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+	font-weight: 900;
+}
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	display: block;
+}
+body, p, blockquote {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+}
